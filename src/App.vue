@@ -1,29 +1,54 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div>
+      <navbottom></navbottom>
     </div>
-    <router-view />
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import navbottom from './components/navbottom.vue'
+export default {
+  data(){
+    return {
+
     }
+  },
+    components:{
+    navbottom,
+  },
+}
+</script>
+<style lang="scss" scoped>
+
+.app-container {
+  margin-top:40px;
+  // padding-bottom: 55px;
+  overflow: hidden;
+}
+header{
+  background-color: #E56D57;
+}
+a {
+  font-weight: bold;
+  color: #2c3e50;
+  text-decoration: none;
+  &.router-link-exact-active {
+    color: #E56D57;
   }
 }
+.mint-tab-item-icon .iconfont {
+  font-size: 20px;
+}
+.mint-tabbar > .mint-tab-item.is-selected{
+  color: #E56D57;
+}
+.v-enter,
+.v-leave-to{
+  opacity: 0;
+  transform: translateX(100%)
+}
+.v-enter-active,
+.v-leave-active{
+  transition: all 0.5s ease;
+}
+
 </style>
